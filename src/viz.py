@@ -7,7 +7,7 @@ def plot_feature_importance(imp_df, has_std=False):
     plt.figure(figsize=(15, 7))
     plt.title('Feature Importance plot (Higher is better)')
     if has_std:
-        ax = plt.barh(y_pos, imp_df['score'], xerr=imp_df['std'])
+        ax = plt.barh(y_pos, imp_df['score'], xerr=1.96 * imp_df['std'])
     else:
         ax = plt.barh(y_pos, imp_df['score'])
     plt.xlabel('Score')
