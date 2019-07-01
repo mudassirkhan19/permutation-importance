@@ -4,7 +4,7 @@ def munge_data(data):
     https://www.kaggle.com/akshat113/titanic-dataset-analysis-level-2
     """
     # Sex
-    data.drop(['Ticket', 'Name'], inplace=True, axis=1)
+    data.drop(['Ticket', 'Name', 'PassengerId'], inplace=True, axis=1)
     data.Sex.fillna('0', inplace=True)
     data.loc[data.Sex != 'male', 'Sex'] = 0
     data.loc[data.Sex == 'male', 'Sex'] = 1
